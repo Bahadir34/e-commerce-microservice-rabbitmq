@@ -1,0 +1,39 @@
+{
+  "name": "gateway",
+  "version": "1.0.0",
+  "description": "- E-ticaret islemlerini destekleyen mikroservice mimarisi ile gelistirilmis bir backend sistemi yazilacak - Ozellikler   - Kimlik Dogrulama   - Urun Yonetimi   - Siparis Islemleri - Yukaridaki servisler icin ayri projeler olusturulacak. - Tema Secenekleri :   - Yemek Siparis Platformu ✅   - Kitap Platformu",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon --config nodemon.json",
+    "build": "tsc",
+    "start": "node dist/app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.6",
+    "dotenv": "^17.3.1",
+    "express": "^5.2.1",
+    "express-http-proxy": "^2.1.2",
+    "express-rate-limit": "^8.3.1",
+    "helmet": "^8.1.0",
+    "morgan": "^1.10.1"
+  },
+  "devDependencies": {
+    "@types/cookie-parser": "^1.4.10",
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.6",
+    "@types/express-http-proxy": "^1.6.7",
+    "@types/express-rate-limit": "^5.1.3",
+    "@types/helmet": "^0.0.48",
+    "@types/morgan": "^1.9.10",
+    "@types/node": "^25.5.0",
+    "nodemon": "^3.1.14",
+    "tsx": "^4.21.0",
+    "typescript": "^5.9.3"
+  }
+}

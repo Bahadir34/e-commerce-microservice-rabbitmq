@@ -40,7 +40,7 @@
 - `npx tsc --init` -> tsconfig.json olusturur. typescriptin kurulumu yapilir
 - `npm i express mongoose cors jsonwebtoken amqplib bcrypt express-http-proxy express-rate-limit zod dotenv cookie-parser morgan helmet`
 - `npm i typescript -D` -> gelistirici bagimliligi olarak indirildi
-- `npm install --save-dev @types/node @types/express @types/cookie-parser @types/express-http-proxy @types/express-rate-limit @types/helmet @types/jsonwebtoken @types/mongoose @types/cors @types/morgan @types/bcrypt @types/amqplib nodemon ts-node` -> typescript icin gerekli olan kutuphanelerin tipleri kuruldu
+- `npm install --save-dev @types/node @types/express @types/cookie-parser @types/express-http-proxy @types/express-rate-limit @types/helmet @types/jsonwebtoken @types/mongoose @types/cors @types/morgan @types/bcrypt @types/amqplib nodemon tsx` -> typescript icin gerekli olan kutuphanelerin tipleri kuruldu
 
 ## API Endpoints
 
