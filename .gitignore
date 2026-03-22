@@ -1,0 +1,12 @@
+.env
+auth/.env
+delivery/.env
+gateway/.env
+orders/.env
+restaurant/.env
+
+auth/node_modules
+delivery/node_modules
+gateway/node_modules
+orders/node_modules
+restaurant/node_modules
