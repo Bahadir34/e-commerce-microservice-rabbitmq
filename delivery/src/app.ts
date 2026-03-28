@@ -36,7 +36,7 @@ app.use(morgan("dev")); // gelistirme asamasinda loglama icin kullanilir, hangi 
 // rate limit middleware'i ekle
 const limiter = rateLimit({
   windowMs: parseInt(process.env.RATE_LIMIT_WINDOW), // 15 dakika
-  max: parseInt(process.env.RATE_LIMIT_MAX_REQ), // her IP adresi için 15 dakikada maksimum 100 istek
+  max: parseInt(process.env.RATE_LIMIT_MAX!), // her IP adresi için 15 dakikada maksimum 100 istek
 });
 app.use(limiter);
 
