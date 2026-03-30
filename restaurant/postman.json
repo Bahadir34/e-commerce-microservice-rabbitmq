@@ -1,0 +1,118 @@
+{
+  "info": {
+    "name": "Restaurant Service API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "version": "1.0.0",
+    "_postman_id": "b8f5ffc0-0000-0000-0000-000000000000",
+    "description": "Postman collection for restaurant service endpoints"
+  },
+  "item": [
+    {
+      "name": "Health check",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/",
+          "host": ["{{baseUrl}}"],
+          "path": ["" ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get all restaurants",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/restaurants?page=1&limit=10",
+          "host": ["{{baseUrl}}"],
+          "path": ["restaurants"],
+          "query": [
+            {"key": "page", "value": "1"},
+            {"key": "limit", "value": "10"}
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Create restaurant",
+      "request": {
+        "method": "POST",
+        "header": [
+          {"key": "Content-Type", "value": "application/json"}
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Test Restaurant\",\n  \"description\": \"A test restaurant\",\n  \"address\": \"123 Main St\",\n  \"phone\": \"555-1234\",\n  \"email\": \"test@example.com\",\n  \"categories\": [\"italian\"],\n  \"deliveryTime\": 30,\n  \"minOrder\": 20,\n  \"deliveryFee\": 5,\n  \"rating\": 4.5,\n  \"isActive\": true,\n  \"isOpen\": true,\n  \"openingHours\": {\n    \"monday\": \"09:00-21:00\",\n    \"tuesday\": \"09:00-21:00\",\n    \"wednesday\": \"09:00-21:00\",\n    \"thursday\": \"09:00-21:00\",\n    \"friday\": \"09:00-21:00\",\n    \"saturday\": \"10:00-20:00\",\n    \"sunday\": \"10:00-18:00\"\n  },\n  \"ownerId\": \"owner-1234\"\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/restaurants",
+          "host": ["{{baseUrl}}"],
+          "path": ["restaurants"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get restaurant by id",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/restaurants/{{restaurantId}}",
+          "host": ["{{baseUrl}}"],
+          "path": ["restaurants", "{{restaurantId}}"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get restaurant menu",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/restaurants/{{restaurantId}}/menu",
+          "host": ["{{baseUrl}}"],
+          "path": ["restaurants", "{{restaurantId}}", "menu"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Add menu item",
+      "request": {
+        "method": "POST",
+        "header": [
+          {"key": "Content-Type", "value": "application/json"}
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"restaurantId\": \"{{restaurantId}}\",\n  \"name\": \"Test Pizza\",\n  \"description\": \"Delicious test item\",\n  \"price\": 12.5,\n  \"category\": \"pizza\",\n  \"imageUrl\": \"https://example.com/pizza.jpg\",\n  \"ingredients\": [\"cheese\", \"tomato\"],\n  \"allergens\": [\"gluten\"],\n  \"isVegeterian\": false,\n  \"isAvailable\": true,\n  \"preparationTime\": 15\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/restaurants/{{restaurantId}}/menu",
+          "host": ["{{baseUrl}}"],
+          "path": ["restaurants", "{{restaurantId}}", "menu"]
+        }
+      },
+      "response": []
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "exec": [
+          "// Set default baseUrl for local development",
+          "if (!pm.environment.get('baseUrl')) {",
+          "  pm.environment.set('baseUrl', 'http://localhost:3000');",
+          "}"
+        ]
+      }
+    }
+  ]
+}

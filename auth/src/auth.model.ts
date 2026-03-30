@@ -62,6 +62,7 @@ const userSchema = new Schema<IUser>(
     role: {
       type: String,
       enum: ["admin", "customer", "courier", "restaurant_owner"],
+      default: "customer",
     },
     addresses: {
       type: [addressSchema], // * embedded gibi davranır.

@@ -49,6 +49,7 @@
 ```bash
 POST /api/auth/register  -> Kullanici Kaydi
 POST /api/auth/login     -> Kullanici Girisi
+POST /api/auth/redresh   -> Token yenileme
 GET  /api/auth/profile   -> Kullanici Profil Bilgileri
 POST /api/auth/address   -> Kullanicinin adresi eklenir
 POST /api/auth/logout    -> Kullanici Cikis Islemi

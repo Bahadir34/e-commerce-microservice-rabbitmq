@@ -25,6 +25,7 @@ const registerSchema = z.object({
       "Şifre en az 1 küçük harf, 1 büyük harf, 1 sayı ve 1 özel karakter içermelidir.",
     ),
   phone: z.string(),
+  isActive: z.boolean().default(true),
   role: z
     .enum(
       ["customer", "restaurant_owner", "courier", "admin"],

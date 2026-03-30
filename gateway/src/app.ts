@@ -33,7 +33,7 @@ app.use(limiter);
 app.use("/api/auth", proxy("http://localhost:3001"));
 app.use("/api/delivery", proxy("http://localhost:3004"));
 app.use("/api/order", proxy("http://localhost:3003"));
-app.use("/api/restaurant", proxy("http://localhost:3002"));
+app.use("/api/restaurants", proxy("http://localhost:3002"));
 
 // hata middlewarei
 app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
