@@ -143,6 +143,7 @@ const menuItemSchema = new Schema<IMenuItem>(
     ingredients: {
       type: [String],
       default: [],
+
     },
     allergens: {
       type: [String],

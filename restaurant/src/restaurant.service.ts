@@ -50,7 +50,7 @@ class RestaurantService {
     if (category) {
       filter.category = category;
     }
-
+ 
     const items = await MenuItem.find(filter);
 
     return items;

@@ -1,4 +1,4 @@
-import type { NextFunction, Request, Response } from "express";
+import { type NextFunction, type Request, type Response } from "express";
 import jwt from "jsonwebtoken";
 import type { IJwtPayload } from "./types/index.ts";
 
@@ -47,4 +47,28 @@ export const authenticate = async (
       });
     }
   }
+};
+
+// ^ rol kontrolu
+export const authorize = (roles: string[]) => {
+  return (req: Request, res: Response, next: NextFunction): void => {
+    if (!req.user) {
+      res.status(401).json({
+        status: "fail",
+        message: "Kullanıcı kimlik doğrulaması gereklidir!",
+      });
+
+      return;
+    }
+
+    if (!roles.includes(req.user.role)) {
+      res.status(403).json({
+        status: "fail",
+        message: "Bu işlem için yetkiniz bulunmamaktadır!",
+      });
+      return;
+    }
+
+    next();
+  };
 };
